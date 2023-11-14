@@ -2,7 +2,7 @@ import unittest
 from main import Calculator
 
 class TestCalculator(unittest.TestCase):
-
+    # Test the add() function
     def test_add(self):
         self.assertEqual(Calculator.add(10, 5), 15)
         self.assertEqual(Calculator.add(-1, 1), 0)
