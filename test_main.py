@@ -13,7 +13,7 @@ class TestCalculator(unittest.TestCase):
         self.assertEqual(Calculator.subtract(10, 5), 5)
         self.assertEqual(Calculator.subtract(-1, 1), -2)
         self.assertEqual(Calculator.subtract(-1, -1), 0)
-
+        # Test for floating point equality
     def test_multiply(self):
         self.assertEqual(Calculator.multiply(10, 5), 50)
         self.assertEqual(Calculator.multiply(-1, 1), -1)
