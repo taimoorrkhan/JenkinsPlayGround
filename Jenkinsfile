@@ -6,19 +6,16 @@ pipeline {
                 git url: 'https://github.com/taimoorrkhan/JenkinsPlayGround.git', branch: 'main'
             }
         }
-
         stage('Build') {
             steps {
                 echo 'Building..'
             }
         }
-
         stage('Test') {
             steps {
                 echo 'Testing..'
             }
         }
-
         stage('Deploy') {
             steps {
                 echo 'Deploying..'
@@ -26,8 +23,8 @@ pipeline {
                     publishers: [
                         sshPublisherDesc(
                             configName: 'MyUbuntuServer',
-                            transfers: [sshTransfer(sourceFiles: '**/*')],
-                            execCommand: 'python /home/ubuntu/python/test.py'
+                            transfers: [sshTransfer(sourceFiles: '**/*', remoteDirectory: '/myapp')],
+                            execCommand: 'python /myapp/test.py'
                         )
                     ]
                 )
